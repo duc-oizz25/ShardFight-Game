@@ -1,2 +1,15 @@
-# Auto detect text files and perform LF normalization
+# Tự động xử lý kiểu dòng cho mỗi hệ điều hành
 * text=auto
+
+# Unity scenes và prefab là file nhị phân → tránh merge lỗi
+*.unity merge=unityyamlmerge eol=lf
+*.prefab merge=unityyamlmerge eol=lf
+*.asset merge=unityyamlmerge eol=lf
+*.mat merge=unityyamlmerge eol=lf
+*.anim merge=unityyamlmerge eol=lf
+
+# Giúp xử lý đúng các file meta (text)
+*.meta text merge
+
+# Đảm bảo không nhầm kiểu dòng
+*.cs text diff=csharp
